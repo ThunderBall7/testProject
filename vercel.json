@@ -12,9 +12,6 @@
       "includeFiles": "api/prisma/*"
     }
   },
-  "env": {
-    "DATABASE_URL": "@your_database_url"
-  },
   "build": {
     "postinstall": "prisma generate"
   }
