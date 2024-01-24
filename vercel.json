@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node",
+      "config": { "maxLambdaSize": "2048mb" }
+    }
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": "api/prisma/*"
+    }
+  },
+  "env": {
+    "DATABASE_URL": "@your_database_url"
+  },
+  "build": {
+    "postinstall": "prisma generate"
+  }
+}
